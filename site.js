@@ -458,7 +458,7 @@ window.onload = function () {
 
                 reader.readAsText(file);
             } else {
-                fileDisplayArea.textContent = "File not allowed2!";
+                fileDisplayArea.textContent = "Error with the file!";
             }
         }
     });
