@@ -290,14 +290,33 @@ function buildArrows() {
     $("#cont").html($("#cont").html());
 }
 
-
 $('button.parse').click(function() {
     $('.arrow').remove();
     var style = $('svg style').clone();
     var defs = $('svg defs').clone();
     $('svg').html('');
     $('svg').append(style).append(defs);
-    parseTextarea();    
+     
+//    var fileDisplayArea = document.getElementById('fileDisplayArea');
+//    var fileInput = document.getElementById('fileInput');
+//    var file = fileInput.files[0];
+//    var vText = "";
+//    fileDisplayArea.textContent = "";
+//    for (var i = 0; i < fileInput.files.length; i++) {
+//            var file = fileInput.files[i];
+//            //var textType = /text.*/;
+//
+//            if (file != null) {
+//                var reader = new FileReader();
+//                reader.readAsText(file);
+//                 vText += reader.result;
+//            } else {
+//                fileDisplayArea.textContent = "File not allowed!3";
+//            }
+//        }
+//        fileDisplayArea.textContent = vText;
+        parseTextarea();
+    
 });
 $('button.save').click(function() {
     open("data:image/svg+xml," + encodeURIComponent($('svg').get(0).outerHTML));
@@ -353,6 +372,19 @@ $(document.body).on("mouseup", function (e) {
         buildArrows();
     }
     $dragging = false;
+    
+});
+
+$(document.body).on("mouseup", "g", function (e) {
+    $dragging = true;
+    var $this = $(this);
+    var vName = $this.text();
+    //$('textarea').val().se
+    //Parser.getSite(vName);
+    var words = $this.html().toString().split(' ');
+    var vURI = words[10].split('"');
+    alert(vURI[1]);
+    //window.location = vURI[1];
 });
 
 });
@@ -407,3 +439,27 @@ function positionCircle(circle) {
 
 }
 
+window.onload = function () {
+    var fileInput = document.getElementById('fileInput');
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function (e) {
+        for (var i = 0; i < fileInput.files.length; i++) {
+            var file = fileInput.files[i];
+            //var textType = /text.*/;
+
+            if (file != null) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    //fileDisplayArea.innerText = reader.result;
+                    fileDisplayArea.textContent = reader.result;
+                }
+
+                reader.readAsText(file);
+            } else {
+                fileDisplayArea.textContent = "File not allowed!";
+            }
+        }
+    });
+}
