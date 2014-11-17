@@ -458,7 +458,7 @@ window.onload = function () {
 
                 reader.readAsText(file);
             } else {
-                fileDisplayArea.textContent = "Error with the file!";
+                fileDisplayArea.textContent = "File contains error!";
             }
         }
     });
