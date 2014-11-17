@@ -458,7 +458,7 @@ window.onload = function () {
 
                 reader.readAsText(file);
             } else {
-                fileDisplayArea.textContent = "File not allowed22!";
+                fileDisplayArea.textContent = "File not allowed!";
             }
         }
     });
