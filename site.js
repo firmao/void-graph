@@ -312,16 +312,40 @@ $('button.loadurl').click(function () {
         $(".result").html(data);
         fileDisplayArea.textContent = data;
         
+        //parsing
         $('.arrow').remove();
         var style = $('svg style').clone();
         var defs = $('svg defs').clone();
         $('svg').html('');
         $('svg').append(style).append(defs);
-
         parseTextarea();
     });
-
 });
+
+$('button.nurl').click(function () {
+    var urls = [ 'http://localhost:8383/dataid-graph/brown.ttl', 'http://localhost:8383/dataid-graph/brown.ttl', 'http://localhost:8383/dataid-graph/brown.ttl' ];
+    moreThanOneURL(urls);
+    
+    //parsing
+    $('.arrow').remove();
+    var style = $('svg style').clone();
+    var defs = $('svg defs').clone();
+    $('svg').html('');
+    $('svg').append(style).append(defs);
+    parseTextarea();
+});
+
+function moreThanOneURL(pUrls)
+{
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
+    for(var i=0, len = pUrls.length; i < len; i++) {
+        var url = pUrls[i];
+        $.get(url, function (data) {
+            $(".result").html(data);
+            fileDisplayArea.textContent = fileDisplayArea.textContent + data;
+        }); 
+    }
+}
 
 // dragging
 var $dragging = null;
@@ -451,18 +475,18 @@ window.onload = function () {
             var file = fileInput.files[i];
             //var textType = /text.*/;
 
-            if (file != null) {
+            //if (file != null) {
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
                     //fileDisplayArea.innerText = reader.result;
-                    fileDisplayArea.textContent = reader.result;
+                    fileDisplayArea.textContent = fileDisplayArea.textContent + reader.result;
                 }
 
                 reader.readAsText(file);
-            } else {
-                fileDisplayArea.textContent = "File not allowed!";
-            }
+            //} else {
+             //   fileDisplayArea.textContent = "File not allowed!";
+            //}
         }
     });
 }
