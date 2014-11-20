@@ -296,30 +296,31 @@ $('button.parse').click(function() {
     var defs = $('svg defs').clone();
     $('svg').html('');
     $('svg').append(style).append(defs);
-     
-//    var fileDisplayArea = document.getElementById('fileDisplayArea');
-//    var fileInput = document.getElementById('fileInput');
-//    var file = fileInput.files[0];
-//    var vText = "";
-//    fileDisplayArea.textContent = "";
-//    for (var i = 0; i < fileInput.files.length; i++) {
-//            var file = fileInput.files[i];
-//            //var textType = /text.*/;
-//
-//            if (file != null) {
-//                var reader = new FileReader();
-//                reader.readAsText(file);
-//                 vText += reader.result;
-//            } else {
-//                fileDisplayArea.textContent = "File not allowed!3";
-//            }
-//        }
-//        fileDisplayArea.textContent = vText;
-        parseTextarea();
+    
+    parseTextarea();
     
 });
 $('button.save').click(function() {
     open("data:image/svg+xml," + encodeURIComponent($('svg').get(0).outerHTML));
+});
+
+$('button.loadurl').click(function () {
+    var txtUrl = document.getElementById('txturl');
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
+    var url = txtUrl.value;
+    $.get(url, function (data) {
+        $(".result").html(data);
+        fileDisplayArea.textContent = data;
+        
+        $('.arrow').remove();
+        var style = $('svg style').clone();
+        var defs = $('svg defs').clone();
+        $('svg').html('');
+        $('svg').append(style).append(defs);
+
+        parseTextarea();
+    });
+
 });
 
 // dragging
@@ -442,6 +443,8 @@ function positionCircle(circle) {
 window.onload = function () {
     var fileInput = document.getElementById('fileInput');
     var fileDisplayArea = document.getElementById('fileDisplayArea');
+    var btnURL = document.getElementById('btnURL');
+    var txtUrl = document.getElementById('txturl');
 
     fileInput.addEventListener('change', function (e) {
         for (var i = 0; i < fileInput.files.length; i++) {

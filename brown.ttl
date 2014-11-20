@@ -1,0 +1,1158 @@
+@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<http://brown.nlp2rdf.org>
+  a dataid:Dataset, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
+  dc:title "Brown Corpus in RDF/NIF" ;
+  rdfs:label "Brown Corpus in RDF" ;
+  dc:description """RDF version of the Brown Corpus (W. N. Francis, H. Kucera; Brown University; 1979). 1,014,312 words in 500 documents, taken from newspapers texts on diverse topics, non-fiction and fiction books as well as government documents.
+
+Original corpus contains manually annotated sentence and token boundaries as well as word class annotations(such as POS, inflectional morphemes, such as noun plural, verb tense and adjective comparison and special tags for foreign words and proper nouns).
+
+Converted corpus contains complete texts reconstructed from TEI/XML version of the Brown corpus. Word classes where linked via OLiA to ontological categories for aggregated querying.""" ;
+
+  void:rootResource <http://brown.nlp2rdf.org/> ;
+  void:exampleResource <http://brown.nlp2rdf.org/lod/a01.ttl> ;
+  dc:language "English" ;
+  dc:landingPage <http://brown.nlp2rdf.org/> ;
+  dc:publisher <http://brown.nlp2rdf.org#creator> ; 
+  dc:rights "When citing this corpus, please cite W. N. Francis, H. Kucera; Brown University; 1979 in addition" ;
+  dc:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+  void:vocabulary <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> ;
+  dcat:keyword "nif","pos","corpus","linguistics","lod","sentences","tokens" ;
+  prov:wasDerivedFrom <http://www.hit.uib.no/icame/brown/bcm.html> ;
+  dcat:distribution <http://brown.nlp2rdf.org/lod/a01.ttl>, <http://brown.nlp2rdf.org/lod/a02.ttl>, <http://brown.nlp2rdf.org/lod/a03.ttl>, <http://brown.nlp2rdf.org/lod/a04.ttl>, <http://brown.nlp2rdf.org/lod/a05.ttl>, <http://brown.nlp2rdf.org/lod/a06.ttl>, <http://brown.nlp2rdf.org/lod/a07.ttl>, <http://brown.nlp2rdf.org/lod/a08.ttl>, <http://brown.nlp2rdf.org/lod/a09.ttl>, <http://brown.nlp2rdf.org/lod/a10.ttl>, <http://brown.nlp2rdf.org/lod/a11.ttl>, <http://brown.nlp2rdf.org/lod/a12.ttl>, <http://brown.nlp2rdf.org/lod/a13.ttl>, <http://brown.nlp2rdf.org/lod/a14.ttl>, <http://brown.nlp2rdf.org/lod/a15.ttl>, <http://brown.nlp2rdf.org/lod/a16.ttl>, <http://brown.nlp2rdf.org/lod/a17.ttl>, <http://brown.nlp2rdf.org/lod/a18.ttl>, <http://brown.nlp2rdf.org/lod/a19.ttl>, <http://brown.nlp2rdf.org/lod/a20.ttl>, <http://brown.nlp2rdf.org/lod/a21.ttl>, <http://brown.nlp2rdf.org/lod/a22.ttl>, <http://brown.nlp2rdf.org/lod/a23.ttl>, <http://brown.nlp2rdf.org/lod/a24.ttl>, <http://brown.nlp2rdf.org/lod/a25.ttl>, <http://brown.nlp2rdf.org/lod/a26.ttl>, <http://brown.nlp2rdf.org/lod/a27.ttl>, <http://brown.nlp2rdf.org/lod/a28.ttl>, <http://brown.nlp2rdf.org/lod/a29.ttl>, <http://brown.nlp2rdf.org/lod/a30.ttl>, <http://brown.nlp2rdf.org/lod/a31.ttl>, <http://brown.nlp2rdf.org/lod/a32.ttl>, <http://brown.nlp2rdf.org/lod/a33.ttl>, <http://brown.nlp2rdf.org/lod/a34.ttl>, <http://brown.nlp2rdf.org/lod/a35.ttl>, <http://brown.nlp2rdf.org/lod/a36.ttl>, <http://brown.nlp2rdf.org/lod/a37.ttl>, <http://brown.nlp2rdf.org/lod/a38.ttl>, <http://brown.nlp2rdf.org/lod/a39.ttl>, <http://brown.nlp2rdf.org/lod/a40.ttl>, <http://brown.nlp2rdf.org/lod/a41.ttl>, <http://brown.nlp2rdf.org/lod/a42.ttl>, <http://brown.nlp2rdf.org/lod/a43.ttl>, <http://brown.nlp2rdf.org/lod/a44.ttl>, <http://brown.nlp2rdf.org/lod/b01.ttl>, <http://brown.nlp2rdf.org/lod/b02.ttl>, <http://brown.nlp2rdf.org/lod/b03.ttl>, <http://brown.nlp2rdf.org/lod/b04.ttl>, <http://brown.nlp2rdf.org/lod/b05.ttl>, <http://brown.nlp2rdf.org/lod/b06.ttl>, <http://brown.nlp2rdf.org/lod/b07.ttl>, <http://brown.nlp2rdf.org/lod/b08.ttl>, <http://brown.nlp2rdf.org/lod/b09.ttl>, <http://brown.nlp2rdf.org/lod/b10.ttl>, <http://brown.nlp2rdf.org/lod/b11.ttl>, <http://brown.nlp2rdf.org/lod/b12.ttl>, <http://brown.nlp2rdf.org/lod/b13.ttl>, <http://brown.nlp2rdf.org/lod/b14.ttl>, <http://brown.nlp2rdf.org/lod/b15.ttl>, <http://brown.nlp2rdf.org/lod/b16.ttl>, <http://brown.nlp2rdf.org/lod/b17.ttl>, <http://brown.nlp2rdf.org/lod/b18.ttl>, <http://brown.nlp2rdf.org/lod/b19.ttl>, <http://brown.nlp2rdf.org/lod/b20.ttl>, <http://brown.nlp2rdf.org/lod/b21.ttl>, <http://brown.nlp2rdf.org/lod/b22.ttl>, <http://brown.nlp2rdf.org/lod/b23.ttl>, <http://brown.nlp2rdf.org/lod/b24.ttl>, <http://brown.nlp2rdf.org/lod/b25.ttl>, <http://brown.nlp2rdf.org/lod/b26.ttl>, <http://brown.nlp2rdf.org/lod/b27.ttl>, <http://brown.nlp2rdf.org/lod/c01.ttl>, <http://brown.nlp2rdf.org/lod/c02.ttl>, <http://brown.nlp2rdf.org/lod/c03.ttl>, <http://brown.nlp2rdf.org/lod/c04.ttl>, <http://brown.nlp2rdf.org/lod/c05.ttl>, <http://brown.nlp2rdf.org/lod/c06.ttl>, <http://brown.nlp2rdf.org/lod/c07.ttl>, <http://brown.nlp2rdf.org/lod/c08.ttl>, <http://brown.nlp2rdf.org/lod/c09.ttl>, <http://brown.nlp2rdf.org/lod/c10.ttl>, <http://brown.nlp2rdf.org/lod/c11.ttl>, <http://brown.nlp2rdf.org/lod/c12.ttl>, <http://brown.nlp2rdf.org/lod/c13.ttl>, <http://brown.nlp2rdf.org/lod/c14.ttl>, <http://brown.nlp2rdf.org/lod/c15.ttl>, <http://brown.nlp2rdf.org/lod/c16.ttl>, <http://brown.nlp2rdf.org/lod/c17.ttl>, <http://brown.nlp2rdf.org/lod/d01.ttl>, <http://brown.nlp2rdf.org/lod/d02.ttl>, <http://brown.nlp2rdf.org/lod/d03.ttl>, <http://brown.nlp2rdf.org/lod/d04.ttl>, <http://brown.nlp2rdf.org/lod/d05.ttl>, <http://brown.nlp2rdf.org/lod/d06.ttl>, <http://brown.nlp2rdf.org/lod/d07.ttl>, <http://brown.nlp2rdf.org/lod/d08.ttl>, <http://brown.nlp2rdf.org/lod/d09.ttl>, <http://brown.nlp2rdf.org/lod/d10.ttl>, <http://brown.nlp2rdf.org/lod/d11.ttl>, <http://brown.nlp2rdf.org/lod/d12.ttl>, <http://brown.nlp2rdf.org/lod/d13.ttl>, <http://brown.nlp2rdf.org/lod/d14.ttl>, <http://brown.nlp2rdf.org/lod/d15.ttl>, <http://brown.nlp2rdf.org/lod/d16.ttl>, <http://brown.nlp2rdf.org/lod/d17.ttl>, <http://brown.nlp2rdf.org/lod/e01.ttl>, <http://brown.nlp2rdf.org/lod/e02.ttl>, <http://brown.nlp2rdf.org/lod/e03.ttl>, <http://brown.nlp2rdf.org/lod/e04.ttl>, <http://brown.nlp2rdf.org/lod/e05.ttl>, <http://brown.nlp2rdf.org/lod/e06.ttl>, <http://brown.nlp2rdf.org/lod/e07.ttl>, <http://brown.nlp2rdf.org/lod/e08.ttl>, <http://brown.nlp2rdf.org/lod/e09.ttl>, <http://brown.nlp2rdf.org/lod/e10.ttl>, <http://brown.nlp2rdf.org/lod/e11.ttl>, <http://brown.nlp2rdf.org/lod/e12.ttl>, <http://brown.nlp2rdf.org/lod/e13.ttl>, <http://brown.nlp2rdf.org/lod/e14.ttl>, <http://brown.nlp2rdf.org/lod/e15.ttl>, <http://brown.nlp2rdf.org/lod/e16.ttl>, <http://brown.nlp2rdf.org/lod/e17.ttl>, <http://brown.nlp2rdf.org/lod/e18.ttl> .
+
+<http://www.hit.uib.no/icame/brown/bcm.html>
+  a prov:Entity;
+  dc:title "Brown Corpus"; 
+  dc:creator "W. N. Francis, H. Kucera";
+  prov:wasGeneratedBy <http://brown.nlp2rdf.org#conversion> .
+
+<http://brown.nlp2rdf.org#conversion>
+  a prov:Activity;
+  dc:title "Conversion of Brown Corpus TEI version using custom SAX parser";
+  prov:wasAssociatedWith <http://brown.nlp2rdf.org#creator> .
+
+<http://brown.nlp2rdf.org#creator>
+  a prov:Agent, foaf:Agent ;
+  rdfs:label "Martin Bruemmer" ;
+  foaf:name "Martin Bruemmer" ;
+  foaf:mbox "bruemmer@informatik.uni-leipzig.de" ;
+  foaf:homepage <http://aksw.org/MartinBruemmer.html> .
+
+<http://brown.nlp2rdf.org/lod/a01.ttl>
+  a dataid:Distribution ;
+  dc:title "a01.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a01.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a02.ttl>
+  a dataid:Distribution ;
+  dc:title "a02.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a02.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a03.ttl>
+  a dataid:Distribution ;
+  dc:title "a03.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a03.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a04.ttl>
+  a dataid:Distribution ;
+  dc:title "a04.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a04.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a05.ttl>
+  a dataid:Distribution ;
+  dc:title "a05.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a05.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a06.ttl>
+  a dataid:Distribution ;
+  dc:title "a06.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a06.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a07.ttl>
+  a dataid:Distribution ;
+  dc:title "a07.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a07.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a08.ttl>
+  a dataid:Distribution ;
+  dc:title "a08.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a08.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a09.ttl>
+  a dataid:Distribution ;
+  dc:title "a09.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a09.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a10.ttl>
+  a dataid:Distribution ;
+  dc:title "a10.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a10.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a11.ttl>
+  a dataid:Distribution ;
+  dc:title "a11.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a11.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a12.ttl>
+  a dataid:Distribution ;
+  dc:title "a12.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a12.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a13.ttl>
+  a dataid:Distribution ;
+  dc:title "a13.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a13.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a14.ttl>
+  a dataid:Distribution ;
+  dc:title "a14.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a14.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a15.ttl>
+  a dataid:Distribution ;
+  dc:title "a15.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a15.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a16.ttl>
+  a dataid:Distribution ;
+  dc:title "a16.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a16.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a17.ttl>
+  a dataid:Distribution ;
+  dc:title "a17.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a17.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a18.ttl>
+  a dataid:Distribution ;
+  dc:title "a18.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a18.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a19.ttl>
+  a dataid:Distribution ;
+  dc:title "a19.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a19.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a20.ttl>
+  a dataid:Distribution ;
+  dc:title "a20.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a20.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a21.ttl>
+  a dataid:Distribution ;
+  dc:title "a21.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a21.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a22.ttl>
+  a dataid:Distribution ;
+  dc:title "a22.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a22.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a23.ttl>
+  a dataid:Distribution ;
+  dc:title "a23.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a23.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a24.ttl>
+  a dataid:Distribution ;
+  dc:title "a24.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a24.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a25.ttl>
+  a dataid:Distribution ;
+  dc:title "a25.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a25.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a26.ttl>
+  a dataid:Distribution ;
+  dc:title "a26.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a26.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a27.ttl>
+  a dataid:Distribution ;
+  dc:title "a27.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a27.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a28.ttl>
+  a dataid:Distribution ;
+  dc:title "a28.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a28.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a29.ttl>
+  a dataid:Distribution ;
+  dc:title "a29.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a29.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a30.ttl>
+  a dataid:Distribution ;
+  dc:title "a30.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a30.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a31.ttl>
+  a dataid:Distribution ;
+  dc:title "a31.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a31.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a32.ttl>
+  a dataid:Distribution ;
+  dc:title "a32.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a32.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a33.ttl>
+  a dataid:Distribution ;
+  dc:title "a33.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a33.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a34.ttl>
+  a dataid:Distribution ;
+  dc:title "a34.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a34.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a35.ttl>
+  a dataid:Distribution ;
+  dc:title "a35.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a35.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a36.ttl>
+  a dataid:Distribution ;
+  dc:title "a36.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a36.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a37.ttl>
+  a dataid:Distribution ;
+  dc:title "a37.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a37.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a38.ttl>
+  a dataid:Distribution ;
+  dc:title "a38.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a38.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a39.ttl>
+  a dataid:Distribution ;
+  dc:title "a39.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a39.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a40.ttl>
+  a dataid:Distribution ;
+  dc:title "a40.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a40.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a41.ttl>
+  a dataid:Distribution ;
+  dc:title "a41.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a41.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a42.ttl>
+  a dataid:Distribution ;
+  dc:title "a42.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a42.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a43.ttl>
+  a dataid:Distribution ;
+  dc:title "a43.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a43.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/a44.ttl>
+  a dataid:Distribution ;
+  dc:title "a44.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/a44.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b01.ttl>
+  a dataid:Distribution ;
+  dc:title "b01.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b01.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b02.ttl>
+  a dataid:Distribution ;
+  dc:title "b02.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b02.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b03.ttl>
+  a dataid:Distribution ;
+  dc:title "b03.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b03.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b04.ttl>
+  a dataid:Distribution ;
+  dc:title "b04.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b04.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b05.ttl>
+  a dataid:Distribution ;
+  dc:title "b05.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b05.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b06.ttl>
+  a dataid:Distribution ;
+  dc:title "b06.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b06.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b07.ttl>
+  a dataid:Distribution ;
+  dc:title "b07.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b07.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b08.ttl>
+  a dataid:Distribution ;
+  dc:title "b08.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b08.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b09.ttl>
+  a dataid:Distribution ;
+  dc:title "b09.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b09.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b10.ttl>
+  a dataid:Distribution ;
+  dc:title "b10.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b10.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b11.ttl>
+  a dataid:Distribution ;
+  dc:title "b11.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b11.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b12.ttl>
+  a dataid:Distribution ;
+  dc:title "b12.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b12.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b13.ttl>
+  a dataid:Distribution ;
+  dc:title "b13.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b13.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b14.ttl>
+  a dataid:Distribution ;
+  dc:title "b14.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b14.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b15.ttl>
+  a dataid:Distribution ;
+  dc:title "b15.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b15.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b16.ttl>
+  a dataid:Distribution ;
+  dc:title "b16.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b16.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b17.ttl>
+  a dataid:Distribution ;
+  dc:title "b17.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b17.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b18.ttl>
+  a dataid:Distribution ;
+  dc:title "b18.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b18.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b19.ttl>
+  a dataid:Distribution ;
+  dc:title "b19.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b19.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b20.ttl>
+  a dataid:Distribution ;
+  dc:title "b20.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b20.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b21.ttl>
+  a dataid:Distribution ;
+  dc:title "b21.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b21.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b22.ttl>
+  a dataid:Distribution ;
+  dc:title "b22.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b22.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b23.ttl>
+  a dataid:Distribution ;
+  dc:title "b23.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b23.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b24.ttl>
+  a dataid:Distribution ;
+  dc:title "b24.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b24.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b25.ttl>
+  a dataid:Distribution ;
+  dc:title "b25.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b25.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b26.ttl>
+  a dataid:Distribution ;
+  dc:title "b26.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b26.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/b27.ttl>
+  a dataid:Distribution ;
+  dc:title "b27.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/b27.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c01.ttl>
+  a dataid:Distribution ;
+  dc:title "c01.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c01.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c02.ttl>
+  a dataid:Distribution ;
+  dc:title "c02.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c02.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c03.ttl>
+  a dataid:Distribution ;
+  dc:title "c03.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c03.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c04.ttl>
+  a dataid:Distribution ;
+  dc:title "c04.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c04.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c05.ttl>
+  a dataid:Distribution ;
+  dc:title "c05.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c05.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c06.ttl>
+  a dataid:Distribution ;
+  dc:title "c06.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c06.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c07.ttl>
+  a dataid:Distribution ;
+  dc:title "c07.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c07.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c08.ttl>
+  a dataid:Distribution ;
+  dc:title "c08.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c08.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c09.ttl>
+  a dataid:Distribution ;
+  dc:title "c09.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c09.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c10.ttl>
+  a dataid:Distribution ;
+  dc:title "c10.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c10.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c11.ttl>
+  a dataid:Distribution ;
+  dc:title "c11.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c11.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c12.ttl>
+  a dataid:Distribution ;
+  dc:title "c12.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c12.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c13.ttl>
+  a dataid:Distribution ;
+  dc:title "c13.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c13.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c14.ttl>
+  a dataid:Distribution ;
+  dc:title "c14.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c14.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c15.ttl>
+  a dataid:Distribution ;
+  dc:title "c15.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c15.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c16.ttl>
+  a dataid:Distribution ;
+  dc:title "c16.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c16.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/c17.ttl>
+  a dataid:Distribution ;
+  dc:title "c17.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/c17.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d01.ttl>
+  a dataid:Distribution ;
+  dc:title "d01.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d01.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d02.ttl>
+  a dataid:Distribution ;
+  dc:title "d02.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d02.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d03.ttl>
+  a dataid:Distribution ;
+  dc:title "d03.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d03.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d04.ttl>
+  a dataid:Distribution ;
+  dc:title "d04.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d04.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d05.ttl>
+  a dataid:Distribution ;
+  dc:title "d05.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d05.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d06.ttl>
+  a dataid:Distribution ;
+  dc:title "d06.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d06.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d07.ttl>
+  a dataid:Distribution ;
+  dc:title "d07.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d07.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d08.ttl>
+  a dataid:Distribution ;
+  dc:title "d08.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d08.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d09.ttl>
+  a dataid:Distribution ;
+  dc:title "d09.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d09.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d10.ttl>
+  a dataid:Distribution ;
+  dc:title "d10.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d10.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d11.ttl>
+  a dataid:Distribution ;
+  dc:title "d11.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d11.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d12.ttl>
+  a dataid:Distribution ;
+  dc:title "d12.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d12.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d13.ttl>
+  a dataid:Distribution ;
+  dc:title "d13.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d13.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d14.ttl>
+  a dataid:Distribution ;
+  dc:title "d14.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d14.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d15.ttl>
+  a dataid:Distribution ;
+  dc:title "d15.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d15.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d16.ttl>
+  a dataid:Distribution ;
+  dc:title "d16.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d16.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/d17.ttl>
+  a dataid:Distribution ;
+  dc:title "d17.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/d17.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e01.ttl>
+  a dataid:Distribution ;
+  dc:title "e01.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e01.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e02.ttl>
+  a dataid:Distribution ;
+  dc:title "e02.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e02.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e03.ttl>
+  a dataid:Distribution ;
+  dc:title "e03.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e03.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e04.ttl>
+  a dataid:Distribution ;
+  dc:title "e04.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e04.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e05.ttl>
+  a dataid:Distribution ;
+  dc:title "e05.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e05.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e06.ttl>
+  a dataid:Distribution ;
+  dc:title "e06.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e06.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e07.ttl>
+  a dataid:Distribution ;
+  dc:title "e07.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e07.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e08.ttl>
+  a dataid:Distribution ;
+  dc:title "e08.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e08.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e09.ttl>
+  a dataid:Distribution ;
+  dc:title "e09.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e09.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e10.ttl>
+  a dataid:Distribution ;
+  dc:title "e10.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e10.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e11.ttl>
+  a dataid:Distribution ;
+  dc:title "e11.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e11.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e12.ttl>
+  a dataid:Distribution ;
+  dc:title "e12.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e12.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e13.ttl>
+  a dataid:Distribution ;
+  dc:title "e13.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e13.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e14.ttl>
+  a dataid:Distribution ;
+  dc:title "e14.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e14.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e15.ttl>
+  a dataid:Distribution ;
+  dc:title "e15.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e15.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e16.ttl>
+  a dataid:Distribution ;
+  dc:title "e16.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e16.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e17.ttl>
+  a dataid:Distribution ;
+  dc:title "e17.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e17.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+<http://brown.nlp2rdf.org/lod/e18.ttl>
+  a dataid:Distribution ;
+  dc:title "e18.ttl" ;
+  dc:description " " ;
+  dc:issued "02-13-2014" ;
+  dcat:accessURL "http://brown.nlp2rdf.org/lod/e18.ttl" ;
+  dcat:mediaType "text/turtle" ;
+  dc:format "ttl" .
+
+
