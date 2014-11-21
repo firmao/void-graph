@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input type="file" id="fileinput" multiple />
+        <script type="text/javascript">
+            function readMultipleFiles(evt) {
+                //Retrieve all the files from the FileList object
+                var files = evt.target.files;
+
+                if (files) {
+                    for (var i = 0, f; f = files[i]; i++) {
+                        var r = new FileReader();
+                        r.onload = (function (f) {
+                            return function (e) {
+                                var contents = e.target.result;
+                                alert("Got the file.n"
+                                        + "name: " + f.name + "n"
+                                        + "type: " + f.type + "n"
+                                        + "size: " + f.size + " bytesn"
+                                        + "starts with: " + contents.substr(1, contents.indexOf("n"))
+                                        );
+                            };
+                        })(f);
+
+                        r.readAsText(f);
+                    }
+                } else {
+                    alert("Failed to load files");
+                }
+            }
+
+            document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
+        </script>
+    </body>
+</html>

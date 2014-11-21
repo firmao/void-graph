@@ -101,7 +101,31 @@
       <button class="parse">parse</button>
       <button class="save">save SVG</button>
       Select a DataID files: 
-      <input type="file" id="fileInput" multiple>
+      <input type="file" id="fileinput" multiple />
+        <script type="text/javascript">
+            function readMultipleFiles(evt) {
+                //Retrieve all the files from the FileList object
+                var files = evt.target.files;
+                var txtArea = document.getElementById('fileDisplayArea');
+                if (files) {
+                    for (var i = 0, f; f = files[i]; i++) {
+                        var r = new FileReader();
+                        r.onload = (function (f) {
+                            return function (e) {
+                                var contents = e.target.result;
+                                txtArea.textContent = txtArea.textContent + contents;
+                            };
+                        })(f);
+
+                        r.readAsText(f);
+                    }
+                } else {
+                    alert("Failed to load files");
+                }
+            }
+
+            document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
+        </script>
       <p>
           URL:
           <input type="text" id="txturl" value="http://localhost:8383/dataid-graph/brown.ttl">

@@ -463,30 +463,3 @@ function positionCircle(circle) {
     */
 
 }
-
-window.onload = function () {
-    var fileInput = document.getElementById('fileInput');
-    var fileDisplayArea = document.getElementById('fileDisplayArea');
-    var btnURL = document.getElementById('btnURL');
-    var txtUrl = document.getElementById('txturl');
-
-    fileInput.addEventListener('change', function (e) {
-        for (var i = 0; i < fileInput.files.length; i++) {
-            var file = fileInput.files[i];
-            //var textType = /text.*/;
-
-            //if (file != null) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    //fileDisplayArea.innerText = reader.result;
-                    fileDisplayArea.textContent = fileDisplayArea.textContent + reader.result;
-                }
-
-                reader.readAsText(file);
-            //} else {
-             //   fileDisplayArea.textContent = "File not allowed!";
-            //}
-        }
-    });
-}
