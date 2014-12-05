@@ -28,10 +28,8 @@
         </style>
     </head>
     <body>
-        <button id="btnShow" style="display: none">Show Controls</button>
             <div class="controls" id="divControls" style="position: absolute; z-index:2; opacity: 0.5;">
-                 <button id="btnHide">Hide Controls</button>
-                 <br>
+                Hide controls <input type="checkbox" id="chkOptions"><br>
                 Enter with your DataID:<br>
                 <textarea id="fileDisplayArea" style="width: 400px; height: 150px;">
 @prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
@@ -103,7 +101,39 @@
       <br>
       <button class="parse" id="btnParse">parse</button>
       <button class="save">save SVG</button>
-          
+      Select a DataID files: 
+      <input type="file" id="fileinput" multiple />
+        <script type="text/javascript">
+            function readMultipleFiles(evt) {
+                //Retrieve all the files from the FileList object
+                var files = evt.target.files;
+                var txtArea = document.getElementById('fileDisplayArea');
+                if (files) {
+                    for (var i = 0, f; f = files[i]; i++) {
+                        var r = new FileReader();
+                        r.onload = (function (f) {
+                            return function (e) {
+                                var contents = e.target.result;
+                                txtArea.textContent = txtArea.textContent + contents;
+                            };
+                        })(f);
+
+                        r.readAsText(f);
+                    }
+                } else {
+                    alert("Failed to load files");
+                }
+            }
+
+            document.getElementById('fileinput').addEventListener('change', readMultipleFiles, false);
+        </script>
+      <p>
+          URL:
+          <input type="text" id="txturl" value="http://localhost:8383/dataid-graph/brown.ttl">
+          <button class="loadurl">Load DataID from LOCAL URL</button>
+      <p>
+          <button class="nurl">More than on Local URL</button>
+            
       <dialog id="myDialog">
             Subject:<br>
             <input type="text" id="txtSubject">
@@ -133,17 +163,6 @@
             tLanguage.value = "";
             tKeyword.value = "";
             dialog.close();    
-      };
-      
-      document.getElementById('btnHide').onclick = function()
-      {
-          document.getElementById('divControls').style.display = "none";
-          document.getElementById('btnShow').style.display = "block";
-      };
-       document.getElementById('btnShow').onclick = function()
-      {
-          document.getElementById('divControls').style.display = "block";
-          document.getElementById('btnShow').style.display = "none";
       };
       </script>
 
