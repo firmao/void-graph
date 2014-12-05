@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="jqcloud.css" />
+        <script src="jquery.min.js"></script>
+
+        <script src="n3-browser.min.js"></script>
+        <script src="jsonld.js"></script>
+
+        <script type="text/javascript" src="jqcloud-1.0.4.js"></script>
+
+        <script type="text/javascript" src="site.js"></script>
+
+        <style>
+
+            body, html {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .cite {
+                font-size:10px;
+                position: absolute;
+                bottom:0;
+                left:0;
+                z-index:10000;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form>
+            Subject:<br>
+            <input type="text" id="txtSubject">
+            <br>
+            Language:<br>
+            <input type="text" id="txtLanguage">
+            <br>
+            Free Key word:<br>
+            <input type="text" id="txtLanguage">
+            <br><br>
+            <input type="submit" value="Generate Diagram" onclick="return foo();" />
+            <script type="text/javascript">
+                function foo() {
+                    var tSubject = document.getElementById("txtSubject");
+                    alert("Submit button clicked!" + tSubject.value);
+                    return true;
+                }
+            </script>
+        </form> 
+
+    </body>
+</html>

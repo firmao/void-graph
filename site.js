@@ -262,7 +262,7 @@ function buildArrows() {
         if($.isArray(val)) {
             $.each(val, function(idx, value) {
                 // only do Datasets
-                var o = all[value]
+                var o = all[value];
                 if(!o) return;
                 var type = o['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'];
                 if(
@@ -323,7 +323,7 @@ $('button.loadurl').click(function () {
 });
 
 $('button.nurl').click(function () {
-    var urls = [ 'http://localhost:8383/dataid-graph/brown.ttl', 'http://localhost:8383/dataid-graph/brown.ttl', 'http://localhost:8383/dataid-graph/brown.ttl' ];
+    var urls = [ 'http://localhost:8383/dataid-graph/brown.ttl', 'http://localhost:8383/dataid-graph/dataid_graph.ttl'];
     moreThanOneURL(urls);
     
     //parsing

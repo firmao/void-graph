@@ -28,7 +28,8 @@
         </style>
     </head>
     <body>
-            <div class="controls" style="position: absolute; z-index:2; opacity: 0.5;">
+            <div class="controls" id="divControls" style="position: absolute; z-index:2; opacity: 0.5;">
+                Hide controls <input type="checkbox" id="chkOptions"><br>
                 Enter with your DataID:<br>
                 <textarea id="fileDisplayArea" style="width: 400px; height: 150px;">
 @prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
@@ -98,7 +99,7 @@
   void:target "http://dbpedia.org/dataid.ttl" .
       </textarea>
       <br>
-      <button class="parse">parse</button>
+      <button class="parse" id="btnParse">parse</button>
       <button class="save">save SVG</button>
       Select a DataID files: 
       <input type="file" id="fileinput" multiple />
@@ -132,6 +133,39 @@
           <button class="loadurl">Load DataID from LOCAL URL</button>
       <p>
           <button class="nurl">More than on Local URL</button>
+            
+      <dialog id="myDialog">
+            Subject:<br>
+            <input type="text" id="txtSubject">
+            <br>
+            Language:<br>
+            <input type="text" id="txtLanguage">
+            <br>
+            Free Key word:<br>
+            <input type="text" id="txtKeyword">
+            <br><br>
+          <button id="btnGenerate">Generate Diagram</button>
+          <button id="btnCancel">Cancel</button>
+      </dialog>
+      <button id="btnFilter">Filter</button>
+      <script type="text/javascript">
+          var dialog = document.getElementById('myDialog');  
+      document.getElementById('btnFilter').onclick = function() {  dialog.showModal();  };  
+      document.getElementById('btnCancel').onclick = function() {  dialog.close();  };  
+      document.getElementById('btnGenerate').onclick = function() 
+      {  
+            var tSubject = document.getElementById("txtSubject");
+            var tLanguage = document.getElementById("txtLanguage");
+            var tKeyword = document.getElementById("txtKeyword");
+            document.getElementById('btnParse').click();
+            alert("URLToCiroService?" + tSubject.value + "&" + tLanguage.value + "&" + tKeyword.value);
+            tSubject.value = "";
+            tLanguage.value = "";
+            tKeyword.value = "";
+            dialog.close();    
+      };
+      </script>
+
       </div>
 
       <div style="position:relative; width:100%; height:100%;" id="cont">
