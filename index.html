@@ -27,92 +27,36 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="myFunction()">
+        <script>
+        function myFunction() {
+            var fileDisplayArea = document.getElementById('fileDisplayArea');
+            $.get('http://localhost:8383/dataid-graph/dataid_graph.ttl', function (data) {
+                $(".result").html(data);
+                fileDisplayArea.textContent = data;
+                document.getElementById('btnParse').click();
+            });
+        }
+        </script>
         <button id="btnShow" style="display: none">Show Controls</button>
             <div class="controls" id="divControls" style="position: absolute; z-index:2; opacity: 0.5;">
                  <button id="btnHide">Hide Controls</button>
                  <br>
                 Enter with your DataID:<br>
-                <textarea id="fileDisplayArea" style="width: 400px; height: 150px;">
-@prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://dbpedia.org/dataid.ttl>
-  a dataid:Dataset, odrl:license, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
-  dc:title "Main Dataset" ;
-  rdfs:label "testLabel" ;
-  dc:description "nothing about description" ;
-  dc:issued "11-12-2014"^^xsd:date ;
-  void:exampleResource <http://dbpedia.org/dataid.ttl> ;
-  dc:language "English" ;
-  void:vocabulary <http://dbpedia.org/dataid.ttl> ;
-  dcat:landingPage <http://dbpedia.org/dataid.ttl> ;
-  dataid:licenseName "Creative Commons Attribution 4.0 International" ;
-  dc:license <http://purl.oclc.org/NET/rdflicense/cc-by> ;
-  void:subset <http://eurostat.linked-statistics.org/void.ttl> .
-
-<http://eurostat.linked-statistics.org/void.ttl>
-  a dataid:Linkset ;
-  dc:issued "11-12-2014" ;
-  dc:modified "11-12-2014" ;
-  void:exampleResource "http://eurostat.linked-statistics.org/void.ttl" ;
-  void:linkPredicate "http://eurostat.linked-statistics.org/void.ttl" ;
-  void:triples "333" ;
-  void:target "http://eurostat.linked-statistics.org/void.ttl" .
-  
-  @prefix dataid: <http://dataid.dbpedia.org/ns/core#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<http://eurostat.linked-statistics.org/void.ttl>
-  a dataid:Dataset, odrl:license, dcat:Dataset, void:Dataset, sd:Dataset, prov:Entity ;
-  dc:title "DataIDEurostat" ;
-  rdfs:label "DataIDEurostat" ;
-  dc:description "something about nothing" ;
-  dc:issued "11-12-2014"^^xsd:date ;
-  void:exampleResource <http://eurostat.linked-statistics.org/void.ttl> ;
-  dc:language "English" ;
-  void:vocabulary <http://eurostat.linked-statistics.org/void.ttl> ;
-  dcat:landingPage <http://eurostat.linked-statistics.org/void.ttl> ;
-  dataid:licenseName "Creative Commons Attribution 4.0 International" ;
-  dc:license <http://purl.oclc.org/NET/rdflicense/cc-by> ;
-  void:subset <http://dbpedia.org/dataid.ttl> .
-
-<http://dbpedia.org/dataid.ttl>
-  a dataid:Linkset ;
-  dc:issued "11-12-2014" ;
-  dc:modified "11-12-2014" ;
-  void:exampleResource "http://dbpedia.org/dataid.ttl" ;
-  void:linkPredicate "http://dbpedia.org/dataid.ttl" ;
-  void:triples "321" ;
-  void:target "http://dbpedia.org/dataid.ttl" .
-      </textarea>
+                <textarea id="fileDisplayArea" style="width: 400px; height: 150px;"></textarea>
       <br>
       <button class="parse" id="btnParse">parse</button>
       <button class="save">save SVG</button>
           
       <dialog id="myDialog">
             Subject:<br>
-            <input type="text" id="txtSubject">
+            <input type="text" id="txtSubject"><input type="radio" id="chk1" value="subject">Classify
             <br>
             Language:<br>
-            <input type="text" id="txtLanguage">
+            <input type="text" id="txtLanguage"><input type="radio" id="chk2" value="language">Classify
             <br>
             Free Key word:<br>
-            <input type="text" id="txtKeyword">
+            <input type="text" id="txtKeyword"><input type="radio" id="chk3" value="keyword">Classify
             <br><br>
           <button id="btnGenerate">Generate Diagram</button>
           <button id="btnCancel">Cancel</button>
@@ -128,7 +72,7 @@
             var tLanguage = document.getElementById("txtLanguage");
             var tKeyword = document.getElementById("txtKeyword");
             document.getElementById('btnParse').click();
-            alert("URLToCiroService?" + tSubject.value + "&" + tLanguage.value + "&" + tKeyword.value);
+            alert("URLToCiroService?subject=" + tSubject.value + "&language=" + tLanguage.value + "&keyword=" + tKeyword.value);
             tSubject.value = "";
             tLanguage.value = "";
             tKeyword.value = "";
